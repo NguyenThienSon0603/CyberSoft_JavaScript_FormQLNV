@@ -272,3 +272,20 @@ select.addEventListener('change', async () => {
         listNhanVien.innerHTML = "Không có dữ liệu!";
     }
 })
+
+
+// Show/Hidden password
+const pass = document.getElementById('showPassword');
+pass.addEventListener('click', ()=>{
+    const txtPass = document.getElementById('matKhau');
+    if(pass.classList.contains('fa-eye')){
+        pass.classList.replace('fa-eye','fa-eye-slash');
+        txtPass.setAttribute('type','text');
+        return;
+    }
+    if(pass.classList.contains('fa-eye-slash')){
+        pass.classList.replace('fa-eye-slash','fa-eye');
+        txtPass.setAttribute('type','password');
+        return;
+    }
+})
