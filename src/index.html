@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./output.css">
+    <title>Document</title>
+</head>
+
+<body class="relative">
+    <!-- Modal -->
+    <div id="overlay" class="overlay absolute top-0 left-0 bg-[rgba(0,0,0,0.6)] w-[100vw] h-[120vh]">
+        <div id="myModal" class=" bg-white rounded-md absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
+            w-[450px]">
+            <h2 class="text-2xl text-center py-3 mb-5 rounded-t-md bg-[#504245] text-white uppercase font-bold">đăng ký
+            </h2>
+            <form id="myForm" action="">
+                <!-- Input -->
+                <div>
+                    <!-- Tài khoản -->
+                    <div class="border border-[rgb(80,66,69 / 26%)] m-2 rounded">
+                        <i class="fa-solid fa-user p-2 bg-[#504245] text-white rounded"></i>
+                        <input id="taiKhoan" type="text" placeholder="Tài khoản" class="outline-none w-[90%]">
+                    </div>
+                    <span id="checkTaiKhoan" class="text-red-800 text-right mx-3">* Chưa nhập tài khoản</span>
+
+                    <!-- Họ và Tên -->
+                    <div class="border border-[rgb(80,66,69 / 26%)] mx-2 rounded">
+                        <i class="fa-solid fa-address-book p-2 bg-[#504245] text-white rounded"></i>
+                        <input id="hoTen" type="text" placeholder="Họ và Tên" class="outline-none w-[90%]">
+                    </div>
+                    <span id="checkHoTen" class="text-red-800 text-right mx-3">* Chưa nhập họ tên</span>
+
+                    <!-- Email -->
+                    <div class="border border-[rgb(80,66,69 / 26%)] m-2 rounded">
+                        <i class="fa-solid fa-envelope p-2 bg-[#504245] text-white rounded"></i>
+                        <input id="email" type="text" placeholder="Email" class="outline-none w-[90%]">
+                    </div>
+                    <span id="checkEmail" class="text-red-800 text-right mx-3">* Chưa nhập email</span>
+
+                    <!-- Mật khẩu -->
+                    <div class="border border-[rgb(80,66,69 / 26%)] m-2 rounded">
+                        <i class="fa-solid fa-key p-2 bg-[#504245] text-white rounded"></i>
+                        <input id="matKhau" type="password" placeholder="Mật khẩu" class="outline-none w-[90%]">
+                    </div>
+                    <span id="checkMatKhau" class="text-red-800 text-right mx-3">* Chưa nhập mật khẩu</span>
+
+                    <!-- Ngày sinh -->
+                    <div class="border border-[rgb(80,66,69 / 26%)] m-2 rounded">
+                        <i class="fa-solid fa-calendar-days p-2 bg-[#504245] text-white rounded"></i>
+                        <input id="ngayLam" type="date" class="outline-none w-[90%]">
+                    </div>
+                    <span id="checkNgayLam" class="text-red-800 text-right mx-3">* Chưa nhập ngày vào làm</span>
+
+                    <!-- Lương cơ bản -->
+                    <div class="border border-[rgb(80,66,69 / 26%)] m-2 rounded">
+                        <i class="fa-solid fa-money-bill p-2 bg-[#504245] text-white rounded"></i>
+                        <input id="luongCoBan" type="number" placeholder="Lương cơ bản" class="outline-none w-[90%]">
+                    </div>
+                    <span id="checkLuongCoBan" class="text-red-800 text-right mx-3">* Chưa nhập lương cơ bản</span>
+
+                    <!-- Chức vụ -->
+                    <div class="border border-[rgb(80,66,69 / 26%)] m-2 rounded">
+                        <i class="fa-solid fa-suitcase p-2 bg-[#504245] text-white rounded"></i>
+                        <select id="chucVu" class="outline-none w-[90%]">
+                            <option value="0">Chọn chức vụ</option>
+                            <option value="1">Giám Đốc</option>
+                            <option value="2">Trưởng Phòng</option>
+                            <option value="3">Nhân Viên</option>
+                        </select>
+                    </div>
+                    <span id="checkChucVu" class="text-red-800 text-right mx-3">* Chưa chọn chức vụ</span>
+
+                    <!-- Giờ làm -->
+                    <div class="border border-[rgb(80,66,69 / 26%)] m-2 rounded">
+                        <i class="fa-solid fa-clock p-2 bg-[#504245] text-white rounded"></i>
+                        <input id="gioLam" type="number" placeholder="Giờ làm" class="outline-none w-[90%]">
+                    </div>
+                    <span id="checkGioLam" class="text-red-800 text-right mx-3">* Chưa nhập giờ làm</span>
+                </div>
+                <!-- Button -->
+                <div class="my-5 mx-2 border-t-2 pt-5 text-right">
+                    <button id="btnSubmit" form="myForm" type="submit"
+                        class="bg-[#8B625A] opacity-100 hover:opacity-90 transition duration-500 px-5 py-2 rounded text-white">Cập
+                        nhật</button>
+                    <button id="btnClose" type="button"
+                        class="bg-[#AE8665] opacity-100 hover:opacity-90 transition duration-500 px-5 py-2 rounded text-white">Đóng</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Thông báo request dữ liệu -->
+    <div id="messageRequest" class="justify-center hidden">
+        <div class="flex justify-evenly items-center bg-white w-60 rounded shadow-md">
+            <i class="fa-solid fa-circle-check text-[#aa812e]"></i>
+            <p class="text-center py-2">Xóa nhân viên thành công</p>
+        </div>
+    </div>
+
+    <!-- Tiêu đề -->
+    <header class="relative overflow-hidden rounded-lg shadow-2xl">
+        <h1 class="z-30 text-center text-2xl lg:text-3xl font-bold py-5 bg-[#504245] text-white uppercase">Quản Lý Nhân
+            Viên</h1>
+    </header>
+
+    <!-- Main -->
+    <main class="mt-5 bg-[#F7F3F3] p-3 rounded-lg shadow-xl">
+        <!-- Thêm mới nhân viên -->
+        <div class="flex justify-between items-end border-b-2 pb-3">
+            <h2 class="text-xl font-bold text-black">Danh Sách Nhân Viên</h2>
+        </div>
+
+        <!-- Tìm kiếm nhân viên -->
+        <div class="flex justify-between mt-3">
+            <!-- Lọc nhân viên theo loại -->
+            <select id="loaiNV"
+                class="border-2 w-60 p-2 rounded cursor-pointer bg-[#cedede] hover:border-blue-600 outline-none transition duration-500">
+                <option class="text-center text-gray-400" value="0">--- Loại nhân viên ---</option>
+                <option value="1">Xuất sắc</option>
+                <option value="2">Giỏi</option>
+                <option value="3">Khá</option>
+                <option value="4">Trung bình</option>
+            </select>
+
+            <!-- Tìm nhân viên -->
+            <button id="btnThem"
+                class="bg-[#84893A] opacity-100 hover:opacity-90 transition duration-500 px-5 py-2 rounded text-white">Thêm
+                nhân
+                viên</button>
+        </div>
+
+
+        <!-- Table danh sách nhân viên -->
+        <div class="overflow-auto">
+            <table class="w-full min-w-[1000px] mt-5">
+                <thead class="bg-[#97B8A3] font-semibold text-center">
+                    <tr>
+                        <th class="p-2 border-2">Tài khoản</th>
+                        <th class="p-2 border-2">Họ và Tên</th>
+                        <th class="p-2 border-2">Email</th>
+                        <th class="p-2 border-2">Ngày vào làm</th>
+                        <th class="p-2 border-2">Lương cơ bản</th>
+                        <th class="p-2 border-2">Chức vụ</th>
+                        <th class="p-2 border-2">Giờ làm</th>
+                        <th class="p-2 border-2">Tổng lương</th>
+                        <th class="p-2 border-2">Xếp loại</th>
+                        <th class="border-2"></th>
+                    </tr>
+                </thead>
+                <tbody id="listNhanVien">
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
+        integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./View/Main.js"></script>
+</body>
+
+</html>
